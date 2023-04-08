@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script>
+    var wpwlOptions = {
+        style: "card"
+    }
+    </script>
+    <script src="https://eu-test.oppwa.com/v1/paymentWidgets.js?checkoutId=aaka2012"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body { background-color:white; width:720px; margin:auto;padding:10px;font-size:14px;}
+        h2 { margin-top:25px;margin-bottom:10px;padding:5px;width:100%;background-color:#eee;
+        border:1px solid #ccc;border-radius:6px;font-size: 16px;font-weight:normal; }
+    </style>
+  </head>
+  <body>
+  <h2><input type="radio" checked="checked" /> Checkout with stored payment details</h2>
+	<table>
+		<tr><td width="100px">Visa</td><td width="200px">xxxx-xxxx-xxxx-1234</td><td width="200px">Dec / 2018</td></tr>
+	</table>
+	<div><button type="submit" name="pay" class="myButton" id="save">Pay now</button></div><br /><br />
+  <h2><input type="radio" /> Checkout with new payment method</h2>
+    <form action="http://localhost/pay.html">
+      MASTER VISA AMEX CHINAUNIONPAY
+    </form>
+    
+    
+    <script>
+    	
+    $(document).ready(function(){
+    	
+    	$("#save").click(function(){
+    		
+    		
+    		$.ajax({
+    			
+    			url:"/googlePay1",
+    			type:"POST",
+    	        
+    			success:function(data){
+    				console.log(data);
+    				alert("success")
+    			},
+    			error:function(error){
+    				console.log(data);
+    				alert("error");
+    			}
+    			
+    		});
+    	});
+    });
+    </script>
+  </body>
+</html>

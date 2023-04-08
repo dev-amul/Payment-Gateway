@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="/css/all.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+
+<!-- paytm -->
+<!-- <script type="application/javascript" src="https://securegw-stage.paytm.in/merchantpgpui/checkoutjs/merchants/Au&jaeLBIZ_S1lDR.js" onload="onScriptLoad();"  crossorigin="anonymous"> </script>
+ -->
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script type="text/javascript" src="/js/all.js" ></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<title>razorpay payment integration</title>
+</head>
+<body>
+
+<!-- payment using button -->
+<form>
+  <script src="https://checkout.razorpay.com/v1/payment-button.js" 
+          data-payment_button_id="pl_IVU5NXYdNqXO2g" async>
+  </script> 
+</form>
+
+<!-- payment using link -->
+<a href="https://rzp.io/i/OAnlHDFB" >pay now</a>
+
+<h2 style="text-align:center">Responsive Pricing Tables</h2>
+<p style="text-align:center">Resize the browser window to see the effect.</p>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">Basic</li>
+    <li class="grey">₹100/month</li>
+    <li>10GB Storage</li>
+    <li>10 Emails</li>
+    <li>10 Domains</li>
+    <li>1GB Bandwidth</li>
+    <li class="grey">
+     <input id="subscription_amount"  value="100" type="hidden" />
+     <button type="button" onclick="myPayment()" class="btn btn-success">RAZORPAY</button>
+    </li>
+  </ul>
+</div>
+
+<!-- 
+<div id="paytm-checkoutjs"></div>
+<div class="columns">
+  <ul class="price">
+    <li class="header" style="background-color:#04AA6D">Pro</li>
+    <li class="grey" id="amount">₹200/month</li>
+    <li>25GB Storage</li>
+    <li>25 Emails</li>
+    <li>25 Domains</li>
+    <li>2GB Bandwidth</li>
+    <li class="grey">
+	         <input type="hidden" value="ORDERID_98765"   id="ORDER_ID"   name="ORDER_ID" />
+	         <input type="hidden" value="2"      id="TXN_AMOUNT" name="TXN_AMOUNT" />
+	         <input type="hidden" value="45863"  id="CUST_ID"    name="CUST_ID"/> 
+	         <button type="submit" class="btn btn-success" id="save">PAYTM</button>
+    </li>
+  </ul>
+</div>
+
+<div class="columns">
+  <ul class="price">
+    <li class="header">Premium</li>
+    <li class="grey">₹300 / month</li>
+    <li>50GB Storage</li>
+    <li>50 Emails</li>
+    <li>50 Domains</li>
+    <li>5GB Bandwidth</li>
+    <li class="grey"><a href="#" class="button">CCAVENUE</a></li>
+  </ul>
+</div>
+
+<script>
+	
+	$(document).ready(function(){
+		
+		$("#save").click(function(){
+		
+			var data = { 
+			  orderid: $("#ORDER_ID").val(),
+			  amount:  $("#TXN_AMOUNT").val(),
+			  custid:  $("#CUST_ID").val()
+			};
+			
+			$.ajax({
+				type:"POST",
+				url:"/PaytmPayment",
+				contentType: "application/json",
+				data:JSON.stringify(data),
+				dataType: "json",
+				
+				success: function(data){
+					alert("Payment Successfull");
+					console.log(data);
+				},
+				error: function(err){
+					alert("payment failed");
+					console.log(data);
+				}
+			});
+		});
+	});
+</script> -->
+</body>
+</html>

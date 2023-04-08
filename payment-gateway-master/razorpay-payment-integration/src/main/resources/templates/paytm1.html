@@ -1,0 +1,20 @@
+<html>
+   <head>
+      <title>Show Payment Page</title>
+   </head>
+   <body>
+      <center>
+         <h1>Please do not refresh this page...</h1>
+      </center>
+      <form method="post" action="https://securegw-stage.paytm.in/theia/api/v1/showPaymentPage?mid=BXgLzc35277917050419&orderId=ORDERID_98765" name="paytm">
+         <table border="1">
+            <tbody>
+               <input type="hidden" name="mid" value="BXgLzc35277917050419">
+               <input type="hidden" name="orderId" value="ORDERID_98765">
+               <input type="hidden" name="txnToken" value="739816707d7444XXXXXXXX6cb4264d0a1590145379323">
+            </tbody>
+         </table>
+         <script type="text/javascript"> document.paytm.submit(); </script>
+      </form>
+   </body>
+</html>
